@@ -1,0 +1,69 @@
+{% extends 'layout.html' %} {% block body %}
+
+<div class="padd-mitha-2">
+  {% with messages = get_flashed_messages() %} {% if messages %} {% for message
+  in messages %}
+  <div class="alert-mitha">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span>&times;</span>
+      </button>
+    </div>
+  </div>
+  {% endfor %} {% endif %} {% endwith %}
+
+  <div class="container">
+    <div class="mx-auto mb-4">
+      <h1>Usuarios</h1>
+    </div>
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Usuario</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for u in users %}
+        <tr>
+          <td>{{ u.username }}</td>
+          <td>{{ u.name }}</td>
+          <td>{{ u.lastname }}</td>
+          <td>{{ u.email }}</td>
+          <td>
+            <a
+              href="{{ url_for('user.set_user', user_id=u.id) }}"
+              class="btn btn-sm btn-warning"
+            >
+              Editar
+            </a>
+            <form
+              action="{{ url_for('user.delete_user', user_id=u.id) }}"
+              method="POST"
+              onsubmit="
+                return confirm('¿Seguro que quieres borrar este usuario?');
+              "
+              style="display: inline"
+            >
+              <button type="submit" class="btn btn-sm btn-danger">
+                Borrar
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="5" class="text-center">No hay usuarios registrados</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

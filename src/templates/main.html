@@ -1,0 +1,54 @@
+{% extends 'layout.html' %} {% block body %}
+
+<div class="padd-mitha">
+  <div class="mx-auto">
+    <img
+      class="logoPrincipal"
+      src="{{url_for('static', filename='images/lupaythonLogoColor.png')}}"
+      alt=""
+    />
+  </div>
+  <div class="row mt-10">
+    <div class="col text-left">
+      <h1>Una forma diferente de corregir</h1>
+      <h3>Simplifica tu trabajo como profesor</h3>
+    </div>
+    <div class="col">
+      <img
+        class="img-col img-bord"
+        src="{{url_for('static', filename='images/script.png')}}"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="mt-10 border-top-green special">
+    <h1>Evalua <span class="h1-upper blue">todo</span></h1>
+    <h1>
+      tipo de
+      <span class="blue">proyectos</span>
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img
+        class="img-col"
+        src="{{url_for('static', filename='images/carpetas.png')}}"
+        alt=""
+      />
+    </div>
+    <div class="col text-right mt-10">
+      <h4>
+        LUPAython funciona ejecutando las pruebas unitarias hechas con python,
+        que has definido en la carpeta <span class="green">test</span>.
+      </h4>
+      <h4 class="mt-10">
+        Luego comprime el archivo y envía el proyecto al endpoint que has
+        definido en el archivo
+        <span class="orange">endpoint.json</span>
+      </h4>
+      <button type="button" class="btnM btn-warning mt-10">Ver ejemplo</button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+<form class="form-signin" method="POST">
+  <div class="form-label-group">
+    <input
+      type="text"
+      id="inputUsername"
+      class="form-control"
+      placeholder="Username"
+      name="username"
+      required
+      autofocus
+      value="{{ user.username if user else '' }}"
+    />
+    <label for="inputUsername">Usuario</label>
+  </div>
+
+  <div class="form-label-group">
+    <input
+      name="name"
+      type="text"
+      id="inputName"
+      class="form-control"
+      placeholder="Name"
+      required
+      value="{{ user.name if user else '' }}"
+    />
+    <label for="inputName">Nombre</label>
+  </div>
+
+  <div class="form-label-group">
+    <input
+      name="lastname"
+      type="text"
+      id="inputLastname"
+      class="form-control"
+      placeholder="Lastname"
+      required
+      value="{{ user.lastname if user else '' }}"
+    />
+    <label for="inputLastname">Apellido</label>
+  </div>
+
+  <div class="form-label-group">
+    <input
+      name="email"
+      type="email"
+      id="inputEmail"
+      class="form-control"
+      placeholder="Email address"
+      required
+      value="{{ user.email if user else '' }}"
+    />
+    <label for="inputEmail">Email</label>
+  </div>
+
+  <button class="btn btn-primary btn-block" type="submit">Guardar</button>
+</form>

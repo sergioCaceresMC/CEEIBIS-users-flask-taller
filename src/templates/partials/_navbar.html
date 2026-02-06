@@ -1,0 +1,36 @@
+<!-- navBar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-mitha">
+  <!-- Navbar content -->
+  <a class="navbar-brand" href="https://proyecto-mitha.org/">
+    <img
+      src="{{url_for('static', filename='images/logo.png')}}"
+      height="80"
+      class="d-inline-block align-top"
+      alt=""
+    />
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users">Usuarios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/new">Nuevo</a>
+      </li>
+    </ul>
+  </div>
+</nav>
